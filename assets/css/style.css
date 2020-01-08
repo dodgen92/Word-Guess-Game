@@ -2,36 +2,36 @@ body {
     background-image: url("../images/happycloud.jpg");
 }
 h1 {
-    font-family: 'Josefin Slab', serif;
+    font-family: 'Titan One', serif;
     font-size: 3.75em;
     text-align: center;
     color: #002d3c;
 }
 
 h2 {
-    font-family: 'Titan One', cursive;
+    font-family: cursive;
     font-size: 2.5em;
     color: #fff;
     text-shadow:
-    -3px -3px 0 #EF8E34,
-    3px -3px 0 #EF8E34,
-    -3px 3px 0 #EF8E34,
+    -3px -3px 0 rgb(239, 52, 52),
+    3px -3px 0 rgb(32, 139, 153),
+    -3px 3px 0 rgb(52, 239, 61),
     3px 3px 0 #EF8E34;
     text-align: center;
     margin-top: -65px;
     margin-right: -200px;
-    transform: rotate(-10deg);
+    transform: rotate(-15deg);
 }
 
 h3{
-    font-family: 'Bangers', cursive;
+    font-family: 'Rancho', cursive;
     font-size: 2.5em;
     text-align: center;
     color: #248490;
 }
 
 h4 {
-    font-family: 'Rancho', cursive;
+    font-family: 'Bangers', cursive;
     font-size: 2em;
     color: #002d3c;
 }
@@ -44,7 +44,7 @@ p {
 } 
 
 #guessedLetters {
-    color: #767F82;
+    color: rgb(141, 7, 7);
 }
 
 #pressPlay {

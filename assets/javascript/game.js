@@ -1,37 +1,36 @@
-// words list
+// color list
 var words = ["CADMIUMYELLOW", "PHTHALOGREEN", "PHTHALOBLUE", "VANDYKEBROWN", "PRUSSIANBLUE", "TITANUMWHITE", "YELLOWOCHRE", "ALIZIRINCRIMSON"];
 
-var maxNumGuesses = 8; // max number of guesses 
-var guessedLetters = []; // store the guessed letters
-var ansWordArr = []; // store the "_" and to be used to replace the word answer
-var numGuessesRemaining = 0; // number of guesses remaining
-var numWins = 0; // number of wins
-var numLosses = 0; // number of losses
-var isFinished = false; // when true, game can start again
-var ansWord; // the word that is being played
+var maxNumGuesses = 8; 
+var guessedLetters = []; 
+var ansWordArr = []; 
+var numGuessesRemaining = 0; 
+var numWins = 0; 
+var numLosses = 0; 
+var isFinished = false; 
+var ansWord; // word being played
 
-// function runs at the start of page and used to restart after game isFinished
+
 function setup() {
-    //picks random word from words list
+    //random word from words list
     ansWord = words[Math.floor(Math.random() * words.length)];
 
     ansWordArr = [];
 
-    // adds "_" to ansWordArr
+   
     for (var i = 0; i < ansWord.length; i++) {
         ansWordArr[i] = "_";
     }
 
-    // reset the variables 
+    
     numGuessesRemaining = maxNumGuesses;
     guessedLetters = [];
 
-    //clears giphy-embed to now show any gifs
+    
     document.getElementById("giphy-embed").src = "";
-    //removes color from numGuesses
+    
     document.getElementById("numGuesses").style.color = "";
 
-    //show the selected elements on the screen 
     updateScreen();
 };
 
@@ -103,7 +102,7 @@ function isLoser() {
         numLosses++;
         isFinished = true;
         //play the loser gif
-        document.getElementById("giphy-embed").src = "https://giphy.com/gifs/bob-ross-bBPKIt6h9yCcw";
+        document.getElementById("giphy-embed").src = "https://giphy.com/gifs/rYEAkYihZsyWs/html5";
         document.getElementById("numLosses").style.color = "#e12d2e";
     }
 
