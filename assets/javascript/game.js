@@ -1,5 +1,5 @@
 // color list
-var words = ["CADMIUMYELLOW", "PHTHALOGREEN", "PHTHALOBLUE", "VANDYKEBROWN", "PRUSSIANBLUE", "TITANUMWHITE", "YELLOWOCHRE", "ALIZIRINCRIMSON"];
+var words = ["CADMIUM YELLOW", "PHTHALO GREEN", "PHTHALO BLUE", "VAN DYKE BROWN", "PRUSSIAN BLUE", "TITANIUM WHITE", "YELLOW OCHRE", "ALIZIRIN CRIMSON"];
 
 var maxNumGuesses = 8; 
 var guessedLetters = []; 
@@ -34,6 +34,14 @@ function setup() {
     updateScreen();
 };
 
+function playAudio() {
+    var audio = new Audio("./assets/media/lose.mp3");
+    audio.play();
+}
+function playAudio1() {
+    var audio = new Audio("./assets/media/win.mp3");
+    audio.play();
+}
 //updates the HTML from the functions
 function updateScreen() {
     document.getElementById("numWins").innerText = numWins;
@@ -75,22 +83,22 @@ function isWinner() {
         numWins++;
         isFinished = true;
         //if the answer is guessed then play assigned gif
-        if(ansWord === "CADMIUMYELLOW") {
-            document.getElementById("giphy-embed").src = "https://giphy.com/gifs/bob-ross-XD0CxeNpDzBsI";
-        } else if (ansWord === "PHTHALOGREEN") {
-            document.getElementById("giphy-embed").src = "https://giphy.com/gifs/painting-bob-joy-zc9fWRl4DUZ4A";
-        } else if (ansWord === "PHTHALOBLUE") {
-            document.getElementById("giphy-embed").src = "https://giphy.com/gifs/painting-bob-joy-zc9fWRl4DUZ4A";
-        } else if (ansWord === "VANDYKEBROWN") {
-            document.getElementById("giphy-embed").src = "https://giphy.com/gifs/bob-ross-XD0CxeNpDzBsI";
-        } else if (ansWord === "PRUSSIANBLUE") {
-            document.getElementById("giphy-embed").src = "https://giphy.com/gifs/bob-ross-FgqvzvlSu3SXm";
-        } else if (ansWord === "TITANIUMWHITE") {
-            document.getElementById("giphy-embed").src = "https://giphy.com/gifs/bob-ross-FgqvzvlSu3SXm";
-        } else if (ansWord === "YELLOWOCHRE") {
-            document.getElementById("giphy-embed").src = "https://giphy.com/gifs/bob-ross-XD0CxeNpDzBsI";
-        } else if (ansWord === "ALIZIRINCRIMSON") {
-            document.getElementById("giphy-embed").src = "https://giphy.com/gifs/bob-ross-FgqvzvlSu3SXm";
+        if(ansWord === "CADMIUM YELLOW") {
+            document.getElementById("giphy-embed").src = "https://giphy.com/embed/xAXjhpZshopW0"; playAudio1();
+        } else if (ansWord === "PHTHALO GREEN") {
+            document.getElementById("giphy-embed").src = "https://giphy.com/embed/xAXjhpZshopW0"; playAudio1();
+        } else if (ansWord === "PHTHALO BLUE") {
+            document.getElementById("giphy-embed").src = "https://giphy.com/embed/xAXjhpZshopW0"; playAudio1();
+        } else if (ansWord === "VAN DYKE BROWN") {
+            document.getElementById("giphy-embed").src = "https://giphy.com/embed/xAXjhpZshopW0"; playAudio1();
+        } else if (ansWord === "PRUSSIAN BLUE") {
+            document.getElementById("giphy-embed").src = "https://giphy.com/embed/xAXjhpZshopW0"; playAudio1();
+        } else if (ansWord === "TITANIUM WHITE") {
+            document.getElementById("giphy-embed").src = "https://giphy.com/embed/xAXjhpZshopW0"; playAudio1();
+        } else if (ansWord === "YELLOW OCHRE") {
+            document.getElementById("giphy-embed").src = "https://giphy.com/embed/xAXjhpZshopW0"; playAudio1();
+        } else if (ansWord === "ALIZIRIN CRIMSON") {
+            document.getElementById("giphy-embed").src = "https://giphy.com/embed/xAXjhpZshopW0"; playAudio1();
         }
             
     }
@@ -102,9 +110,11 @@ function isLoser() {
         numLosses++;
         isFinished = true;
         //play the loser gif
-        document.getElementById("giphy-embed").src = "https://giphy.com/gifs/rYEAkYihZsyWs/html5";
+        document.getElementById("giphy-embed").src = "https://giphy.com/embed/bBPKIt6h9yCcw";
         document.getElementById("numLosses").style.color = "#e12d2e";
+        playAudio();
     }
+    
 
 };
 
@@ -119,12 +129,20 @@ document.onkeyup = function(event) {
     } else {
         //check to see if only letters A-Z are pressed
         //functions are executed when user presses A-Z key
-        if(event.keyCode >= 65 && event.keyCode <= 90) {
+        if(event.keyCode >= 46 && event.keyCode <= 90) {
             checkGuess(event.key.toUpperCase()); 
             updateScreen();
             isWinner();
             isLoser();
         }
+    //this part handles spaces
+    else if(event.keyCode == 32) {
+        checkGuess(event.key);
+        updateScreen();
+        isWinner();
+        isLoser();
+}
+    
     }
 };
 

@@ -1,5 +1,8 @@
 body {
-    background-image: url("../images/happycloud.jpg");
+    background-image: url("../media/art1.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
 }
 h1 {
     font-family: 'Titan One', serif;
